@@ -1,0 +1,771 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4196AD22A14224B00C4246B /* CyptinvestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196AD12A14224B00C4246B /* CyptinvestApp.swift */; };
+		D4196AD42A14224B00C4246B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196AD32A14224B00C4246B /* ContentView.swift */; };
+		D4196AD62A14224C00C4246B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4196AD52A14224C00C4246B /* Assets.xcassets */; };
+		D4196AD92A14224C00C4246B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4196AD82A14224C00C4246B /* Preview Assets.xcassets */; };
+		D4196ADB2A14224C00C4246B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196ADA2A14224C00C4246B /* Persistence.swift */; };
+		D4196ADE2A14224C00C4246B /* Cyptinvest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4196ADC2A14224C00C4246B /* Cyptinvest.xcdatamodeld */; };
+		D4196AE82A14224D00C4246B /* CyptinvestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196AE72A14224D00C4246B /* CyptinvestTests.swift */; };
+		D4196AF22A14224D00C4246B /* CyptinvestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196AF12A14224D00C4246B /* CyptinvestUITests.swift */; };
+		D4196AF42A14224D00C4246B /* CyptinvestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196AF32A14224D00C4246B /* CyptinvestUITestsLaunchTests.swift */; };
+		D4196B082A14289F00C4246B /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B072A14289F00C4246B /* CustomTabBar.swift */; };
+		D4196B0E2A14C9BE00C4246B /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B0D2A14C9BE00C4246B /* Assets.swift */; };
+		D4196B102A14C9D000C4246B /* AssetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B0F2A14C9D000C4246B /* AssetsViewModel.swift */; };
+		D4196B152A14CA2E00C4246B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B142A14CA2E00C4246B /* User.swift */; };
+		D4196B172A14CA9C00C4246B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B162A14CA9C00C4246B /* UserViewModel.swift */; };
+		D4196B1E2A14CB9000C4246B /* AssetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B1D2A14CB9000C4246B /* AssetsListView.swift */; };
+		D4196B202A14CBCE00C4246B /* AssetDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B1F2A14CBCE00C4246B /* AssetDetailsView.swift */; };
+		D4196B222A14CC5F00C4246B /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4196B212A14CC5F00C4246B /* Register.storyboard */; };
+		D4196B242A14CC7E00C4246B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B232A14CC7E00C4246B /* WelcomeViewController.swift */; };
+		D4196B262A14CC9100C4246B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B252A14CC9100C4246B /* RegisterViewController.swift */; };
+		D4196B292A14CE6800C4246B /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B282A14CE6800C4246B /* RoundedCorners.swift */; };
+		D4196B312A14D36400C4246B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B2D2A14D36400C4246B /* NetworkManager.swift */; };
+		D4196B322A14D36400C4246B /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B2E2A14D36400C4246B /* ErrorHandler.swift */; };
+		D4196B332A14D36400C4246B /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B2F2A14D36400C4246B /* NetworkProtocol.swift */; };
+		D4196B342A14D36400C4246B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B302A14D36400C4246B /* API.swift */; };
+		D4196B362A14D37300C4246B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B352A14D37300C4246B /* Extensions.swift */; };
+		D4196B3A2A1610B800C4246B /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B392A1610B800C4246B /* ListCell.swift */; };
+		D4196B3C2A16208700C4246B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B3B2A16208700C4246B /* Coordinator.swift */; };
+		D4196B3E2A16212700C4246B /* EntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B3D2A16212700C4246B /* EntryPoint.swift */; };
+		D4196B402A164CE800C4246B /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B3F2A164CE800C4246B /* ClearButton.swift */; };
+		D4196B422A164D9900C4246B /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B412A164D9900C4246B /* TabBarButton.swift */; };
+		D4196B442A16510700C4246B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B432A16510700C4246B /* SearchBar.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4196AE42A14224D00C4246B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4196AC62A14224B00C4246B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4196ACD2A14224B00C4246B;
+			remoteInfo = Cyptinvest;
+		};
+		D4196AEE2A14224D00C4246B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4196AC62A14224B00C4246B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4196ACD2A14224B00C4246B;
+			remoteInfo = Cyptinvest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4196ACE2A14224B00C4246B /* Cyptinvest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cyptinvest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4196AD12A14224B00C4246B /* CyptinvestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyptinvestApp.swift; sourceTree = "<group>"; };
+		D4196AD32A14224B00C4246B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D4196AD52A14224C00C4246B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4196AD82A14224C00C4246B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D4196ADA2A14224C00C4246B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		D4196ADD2A14224C00C4246B /* Cyptinvest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cyptinvest.xcdatamodel; sourceTree = "<group>"; };
+		D4196AE32A14224D00C4246B /* CyptinvestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CyptinvestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4196AE72A14224D00C4246B /* CyptinvestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyptinvestTests.swift; sourceTree = "<group>"; };
+		D4196AED2A14224D00C4246B /* CyptinvestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CyptinvestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4196AF12A14224D00C4246B /* CyptinvestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyptinvestUITests.swift; sourceTree = "<group>"; };
+		D4196AF32A14224D00C4246B /* CyptinvestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyptinvestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D4196B072A14289F00C4246B /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		D4196B0D2A14C9BE00C4246B /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		D4196B0F2A14C9D000C4246B /* AssetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewModel.swift; sourceTree = "<group>"; };
+		D4196B142A14CA2E00C4246B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D4196B162A14CA9C00C4246B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		D4196B1D2A14CB9000C4246B /* AssetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsListView.swift; sourceTree = "<group>"; };
+		D4196B1F2A14CBCE00C4246B /* AssetDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailsView.swift; sourceTree = "<group>"; };
+		D4196B212A14CC5F00C4246B /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		D4196B232A14CC7E00C4246B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		D4196B252A14CC9100C4246B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D4196B282A14CE6800C4246B /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		D4196B2D2A14D36400C4246B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D4196B2E2A14D36400C4246B /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		D4196B2F2A14D36400C4246B /* NetworkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		D4196B302A14D36400C4246B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D4196B352A14D37300C4246B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D4196B392A1610B800C4246B /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		D4196B3B2A16208700C4246B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D4196B3D2A16212700C4246B /* EntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPoint.swift; sourceTree = "<group>"; };
+		D4196B3F2A164CE800C4246B /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
+		D4196B412A164D9900C4246B /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		D4196B432A16510700C4246B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4196ACB2A14224B00C4246B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4196AE02A14224D00C4246B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4196AEA2A14224D00C4246B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4196AC52A14224B00C4246B = {
+			isa = PBXGroup;
+			children = (
+				D4196AD02A14224B00C4246B /* Cyptinvest */,
+				D4196AE62A14224D00C4246B /* CyptinvestTests */,
+				D4196AF02A14224D00C4246B /* CyptinvestUITests */,
+				D4196ACF2A14224B00C4246B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4196ACF2A14224B00C4246B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4196ACE2A14224B00C4246B /* Cyptinvest.app */,
+				D4196AE32A14224D00C4246B /* CyptinvestTests.xctest */,
+				D4196AED2A14224D00C4246B /* CyptinvestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4196AD02A14224B00C4246B /* Cyptinvest */ = {
+			isa = PBXGroup;
+			children = (
+				D4196B022A1422B400C4246B /* Services */,
+				D4196B012A1422A900C4246B /* Features */,
+				D4196B002A14229900C4246B /* Components */,
+				D4196AD12A14224B00C4246B /* CyptinvestApp.swift */,
+				D4196AD32A14224B00C4246B /* ContentView.swift */,
+				D4196B3D2A16212700C4246B /* EntryPoint.swift */,
+				D4196AD52A14224C00C4246B /* Assets.xcassets */,
+				D4196ADA2A14224C00C4246B /* Persistence.swift */,
+				D4196ADC2A14224C00C4246B /* Cyptinvest.xcdatamodeld */,
+				D4196AD72A14224C00C4246B /* Preview Content */,
+			);
+			path = Cyptinvest;
+			sourceTree = "<group>";
+		};
+		D4196AD72A14224C00C4246B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D4196AD82A14224C00C4246B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D4196AE62A14224D00C4246B /* CyptinvestTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4196AE72A14224D00C4246B /* CyptinvestTests.swift */,
+			);
+			path = CyptinvestTests;
+			sourceTree = "<group>";
+		};
+		D4196AF02A14224D00C4246B /* CyptinvestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D4196AF12A14224D00C4246B /* CyptinvestUITests.swift */,
+				D4196AF32A14224D00C4246B /* CyptinvestUITestsLaunchTests.swift */,
+			);
+			path = CyptinvestUITests;
+			sourceTree = "<group>";
+		};
+		D4196B002A14229900C4246B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D4196B072A14289F00C4246B /* CustomTabBar.swift */,
+				D4196B392A1610B800C4246B /* ListCell.swift */,
+				D4196B3F2A164CE800C4246B /* ClearButton.swift */,
+				D4196B412A164D9900C4246B /* TabBarButton.swift */,
+				D4196B432A16510700C4246B /* SearchBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D4196B012A1422A900C4246B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D4196B0C2A14C61900C4246B /* Register */,
+				D4196B0B2A14C5BD00C4246B /* Assets */,
+				D4196B0A2A14C5AB00C4246B /* Portfolio */,
+				D4196B092A14C55500C4246B /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D4196B022A1422B400C4246B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D4196B302A14D36400C4246B /* API.swift */,
+				D4196B2E2A14D36400C4246B /* ErrorHandler.swift */,
+				D4196B2D2A14D36400C4246B /* NetworkManager.swift */,
+				D4196B2F2A14D36400C4246B /* NetworkProtocol.swift */,
+				D4196B352A14D37300C4246B /* Extensions.swift */,
+				D4196B3B2A16208700C4246B /* Coordinator.swift */,
+				D4196B272A14CE3700C4246B /* Helpers */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D4196B092A14C55500C4246B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D4196B0A2A14C5AB00C4246B /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		D4196B0B2A14C5BD00C4246B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D4196B0D2A14C9BE00C4246B /* Assets.swift */,
+				D4196B0F2A14C9D000C4246B /* AssetsViewModel.swift */,
+				D4196B132A14CA0B00C4246B /* View */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D4196B0C2A14C61900C4246B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				D4196B142A14CA2E00C4246B /* User.swift */,
+				D4196B162A14CA9C00C4246B /* UserViewModel.swift */,
+				D4196B182A14CAA900C4246B /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		D4196B132A14CA0B00C4246B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4196B1D2A14CB9000C4246B /* AssetsListView.swift */,
+				D4196B1F2A14CBCE00C4246B /* AssetDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D4196B182A14CAA900C4246B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4196B212A14CC5F00C4246B /* Register.storyboard */,
+				D4196B232A14CC7E00C4246B /* WelcomeViewController.swift */,
+				D4196B252A14CC9100C4246B /* RegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D4196B272A14CE3700C4246B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D4196B282A14CE6800C4246B /* RoundedCorners.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4196ACD2A14224B00C4246B /* Cyptinvest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4196AF72A14224D00C4246B /* Build configuration list for PBXNativeTarget "Cyptinvest" */;
+			buildPhases = (
+				D4196ACA2A14224B00C4246B /* Sources */,
+				D4196ACB2A14224B00C4246B /* Frameworks */,
+				D4196ACC2A14224B00C4246B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cyptinvest;
+			productName = Cyptinvest;
+			productReference = D4196ACE2A14224B00C4246B /* Cyptinvest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4196AE22A14224D00C4246B /* CyptinvestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4196AFA2A14224D00C4246B /* Build configuration list for PBXNativeTarget "CyptinvestTests" */;
+			buildPhases = (
+				D4196ADF2A14224D00C4246B /* Sources */,
+				D4196AE02A14224D00C4246B /* Frameworks */,
+				D4196AE12A14224D00C4246B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4196AE52A14224D00C4246B /* PBXTargetDependency */,
+			);
+			name = CyptinvestTests;
+			productName = CyptinvestTests;
+			productReference = D4196AE32A14224D00C4246B /* CyptinvestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D4196AEC2A14224D00C4246B /* CyptinvestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4196AFD2A14224D00C4246B /* Build configuration list for PBXNativeTarget "CyptinvestUITests" */;
+			buildPhases = (
+				D4196AE92A14224D00C4246B /* Sources */,
+				D4196AEA2A14224D00C4246B /* Frameworks */,
+				D4196AEB2A14224D00C4246B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4196AEF2A14224D00C4246B /* PBXTargetDependency */,
+			);
+			name = CyptinvestUITests;
+			productName = CyptinvestUITests;
+			productReference = D4196AED2A14224D00C4246B /* CyptinvestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4196AC62A14224B00C4246B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					D4196ACD2A14224B00C4246B = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					D4196AE22A14224D00C4246B = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = D4196ACD2A14224B00C4246B;
+					};
+					D4196AEC2A14224D00C4246B = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = D4196ACD2A14224B00C4246B;
+					};
+				};
+			};
+			buildConfigurationList = D4196AC92A14224B00C4246B /* Build configuration list for PBXProject "Cyptinvest" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4196AC52A14224B00C4246B;
+			productRefGroup = D4196ACF2A14224B00C4246B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4196ACD2A14224B00C4246B /* Cyptinvest */,
+				D4196AE22A14224D00C4246B /* CyptinvestTests */,
+				D4196AEC2A14224D00C4246B /* CyptinvestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4196ACC2A14224B00C4246B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4196AD92A14224C00C4246B /* Preview Assets.xcassets in Resources */,
+				D4196AD62A14224C00C4246B /* Assets.xcassets in Resources */,
+				D4196B222A14CC5F00C4246B /* Register.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4196AE12A14224D00C4246B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4196AEB2A14224D00C4246B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4196ACA2A14224B00C4246B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4196ADE2A14224C00C4246B /* Cyptinvest.xcdatamodeld in Sources */,
+				D4196B172A14CA9C00C4246B /* UserViewModel.swift in Sources */,
+				D4196B0E2A14C9BE00C4246B /* Assets.swift in Sources */,
+				D4196B202A14CBCE00C4246B /* AssetDetailsView.swift in Sources */,
+				D4196ADB2A14224C00C4246B /* Persistence.swift in Sources */,
+				D4196B332A14D36400C4246B /* NetworkProtocol.swift in Sources */,
+				D4196AD42A14224B00C4246B /* ContentView.swift in Sources */,
+				D4196B442A16510700C4246B /* SearchBar.swift in Sources */,
+				D4196B3E2A16212700C4246B /* EntryPoint.swift in Sources */,
+				D4196B422A164D9900C4246B /* TabBarButton.swift in Sources */,
+				D4196B242A14CC7E00C4246B /* WelcomeViewController.swift in Sources */,
+				D4196B082A14289F00C4246B /* CustomTabBar.swift in Sources */,
+				D4196B312A14D36400C4246B /* NetworkManager.swift in Sources */,
+				D4196B262A14CC9100C4246B /* RegisterViewController.swift in Sources */,
+				D4196B362A14D37300C4246B /* Extensions.swift in Sources */,
+				D4196B292A14CE6800C4246B /* RoundedCorners.swift in Sources */,
+				D4196B342A14D36400C4246B /* API.swift in Sources */,
+				D4196B1E2A14CB9000C4246B /* AssetsListView.swift in Sources */,
+				D4196B3C2A16208700C4246B /* Coordinator.swift in Sources */,
+				D4196B3A2A1610B800C4246B /* ListCell.swift in Sources */,
+				D4196AD22A14224B00C4246B /* CyptinvestApp.swift in Sources */,
+				D4196B322A14D36400C4246B /* ErrorHandler.swift in Sources */,
+				D4196B402A164CE800C4246B /* ClearButton.swift in Sources */,
+				D4196B152A14CA2E00C4246B /* User.swift in Sources */,
+				D4196B102A14C9D000C4246B /* AssetsViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4196ADF2A14224D00C4246B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4196AE82A14224D00C4246B /* CyptinvestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4196AE92A14224D00C4246B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4196AF22A14224D00C4246B /* CyptinvestUITests.swift in Sources */,
+				D4196AF42A14224D00C4246B /* CyptinvestUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4196AE52A14224D00C4246B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4196ACD2A14224B00C4246B /* Cyptinvest */;
+			targetProxy = D4196AE42A14224D00C4246B /* PBXContainerItemProxy */;
+		};
+		D4196AEF2A14224D00C4246B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4196ACD2A14224B00C4246B /* Cyptinvest */;
+			targetProxy = D4196AEE2A14224D00C4246B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D4196AF52A14224D00C4246B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D4196AF62A14224D00C4246B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4196AF82A14224D00C4246B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cyptinvest/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghl.Cyptinvest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D4196AF92A14224D00C4246B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cyptinvest/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghl.Cyptinvest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D4196AFB2A14224D00C4246B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghl.CyptinvestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cyptinvest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cyptinvest";
+			};
+			name = Debug;
+		};
+		D4196AFC2A14224D00C4246B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghl.CyptinvestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cyptinvest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cyptinvest";
+			};
+			name = Release;
+		};
+		D4196AFE2A14224D00C4246B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghl.CyptinvestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cyptinvest;
+			};
+			name = Debug;
+		};
+		D4196AFF2A14224D00C4246B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghl.CyptinvestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cyptinvest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4196AC92A14224B00C4246B /* Build configuration list for PBXProject "Cyptinvest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4196AF52A14224D00C4246B /* Debug */,
+				D4196AF62A14224D00C4246B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4196AF72A14224D00C4246B /* Build configuration list for PBXNativeTarget "Cyptinvest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4196AF82A14224D00C4246B /* Debug */,
+				D4196AF92A14224D00C4246B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4196AFA2A14224D00C4246B /* Build configuration list for PBXNativeTarget "CyptinvestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4196AFB2A14224D00C4246B /* Debug */,
+				D4196AFC2A14224D00C4246B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4196AFD2A14224D00C4246B /* Build configuration list for PBXNativeTarget "CyptinvestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4196AFE2A14224D00C4246B /* Debug */,
+				D4196AFF2A14224D00C4246B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D4196ADC2A14224C00C4246B /* Cyptinvest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D4196ADD2A14224C00C4246B /* Cyptinvest.xcdatamodel */,
+			);
+			currentVersion = D4196ADD2A14224C00C4246B /* Cyptinvest.xcdatamodel */;
+			path = Cyptinvest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D4196AC62A14224B00C4246B /* Project object */;
+}
