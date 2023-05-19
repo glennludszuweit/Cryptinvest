@@ -34,7 +34,7 @@ struct AssetsListCell: View {
                     }
                     Text(asset.symbol.uppercased())
                         .foregroundColor(Color("OffBlack").opacity(0.8))
-                        .font(.custom("", size: 18))
+                        .font(.subheadline).fontWeight(.semibold)
                 }
                 Spacer()
                 VStack {
@@ -42,6 +42,7 @@ struct AssetsListCell: View {
                         Spacer()
                         Text(asset.currentPrice.formatted(.currency(code: "USD")))
                             .foregroundColor(Color("OffBlack").opacity(0.8))
+                            .font(.subheadline)
                             .fontWeight(.semibold)
                     }
                     HStack {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @State var assetsViewModel: AssetsViewModel
+    @StateObject var assetsViewModel: AssetsViewModel
     @State var searchTerm: String = ""
     
     var body: some View {
@@ -22,6 +22,25 @@ struct SearchBar: View {
                     assetsViewModel.searchAssets(searchTerm: term)
                 }
         }.padding()
+    }
+}
+
+struct ClearButton: ViewModifier {
+    @Binding var text: String
+    
+    public func body(content: Content) -> some View {
+        ZStack(alignment: .trailing) {
+            content
+            if !text.isEmpty {
+                Button(action: {
+                    self.text = ""
+                }, label: {
+                    Image(systemName: "delete.left")
+                        .foregroundColor(Color(UIColor.opaqueSeparator))
+                })
+                .padding(.trailing, 8)
+            }
+        }
     }
 }
 

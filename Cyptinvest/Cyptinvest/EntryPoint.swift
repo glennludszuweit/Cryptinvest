@@ -18,9 +18,9 @@ struct EntryPoint: View {
                 .navigationDestination(for: CurrentPage.self) { navigation in
                     switch navigation {
                     case .assetsList:
-                        AssetsListView(assetsViewModel: AssetsViewModel(manager: NetworkManager()))
+                        AssetsListView()
                     case .assetDetails:
-                        AssetDetailsView(assetViewModel: AssetViewModel(manager: NetworkManager()), asset: coordinator.asset)
+                        AssetDetailsView(asset: coordinator.asset)
                     }
                 }
         }

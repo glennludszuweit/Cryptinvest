@@ -16,7 +16,7 @@ struct CustomTabBar: View {
             ZStack(alignment: .bottom) {
                 TabView(selection: $currentTab) {
                     Group {
-                        AssetsListView(assetsViewModel: AssetsViewModel(manager: NetworkManager()))
+                        AssetsListView()
                             .tag(Tab.Assets)
                         Text("Portfolio")
                             .tag(Tab.Portfolio)
@@ -27,7 +27,7 @@ struct CustomTabBar: View {
                 
                 HStack(spacing: 0) {
                     ForEach(Tab.allCases, id: \.rawValue) { tab in
-                        TabBarButton(currentTab: $currentTab, tab: tab, animation: animation) {  tab in
+                        TabBarButton(tab: tab, animation: animation) {  tab in
                             withAnimation(.spring()) {
                                 currentTab = tab
                             }
@@ -44,6 +44,28 @@ struct CustomTabBar: View {
                 .offset(y: 35)
             }
         }
+    }
+    
+    @ViewBuilder
+    func TabBarButton(tab: Tab, animation: Namespace.ID, onTap: @escaping (Tab) -> ()) -> some View {
+        Image(systemName: tab.rawValue)
+            .foregroundColor(currentTab == tab ? .white : .gray)
+            .frame(width: 45, height: 45)
+            .background(
+                ZStack {
+                    if currentTab == tab {
+                        RoundedRectangle(cornerRadius: 5, style: .continuous)
+                            .fill(Color("Purple"))
+                            .matchedGeometryEffect(id: "Tab", in: animation)
+                    }
+                }
+            )
+            .frame(maxWidth: .infinity)
+            .containerShape(Rectangle())
+            .onTapGesture {
+                onTap(tab)
+            }
+        
     }
 }
 
