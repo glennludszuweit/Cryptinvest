@@ -18,13 +18,13 @@ class AssetsViewModel: ObservableObject {
         self.manager = manager
     }
     
-    func getAll(_ urlString: String = API.coingeckoApi) async {
+    func getMarketAssets(_ urlString: String = API.coingeckoApi) async {
         guard let url = URL(string: urlString) else {
             customError = ErrorHandler.invalidUrlError
             return
         }
         do {
-            let result = try await self.manager.getAll(apiURL: url)
+            let result = try await self.manager.get(apiURL: url)
             let data = try JSONDecoder().decode([Asset].self, from: result)
             self.assetsList = data
             self.searchAssets(searchTerm: "")

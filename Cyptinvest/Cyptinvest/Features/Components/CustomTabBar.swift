@@ -2,7 +2,7 @@
 //  CustomTabBar.swift
 //  Cyptinvest
 //
-//  Created by Glenn Ludszuweit on 16/05/2023.
+//  Created by Glenn Ludszuweit on 18/05/2023.
 //
 
 import SwiftUI
@@ -44,6 +44,12 @@ struct CustomTabBar: View {
                 .offset(y: 35)
             }
         }
+    }
+}
+
+struct CustomTabBar_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomTabBar()
     }
 }
 

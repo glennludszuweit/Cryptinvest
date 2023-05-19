@@ -36,6 +36,6 @@ struct TabBarButton: View {
 
 //struct TabBarButton_Previews: PreviewProvider {
 //    static var previews: some View {
-//        TabBarButton(currentTab: .constant(Tab.Assets), tab: Tab.Assets, animation: Namespace.ID, onTap: (Tab) -> ())
+//        TabBarButton(currentTab: .constant(Tab.Assets), tab: Tab.Assets, animation: .matchedGeometryEffect(id: "Tab", in: Namespace.ID), onTap: (Tab) -> ())
 //    }
 //}

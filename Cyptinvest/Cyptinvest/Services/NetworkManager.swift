@@ -8,7 +8,7 @@
 import Foundation
 
 class NetworkManager: NetworkProtocol {
-    func getAll(apiURL: URL) async throws -> Data {
+    func get(apiURL: URL) async throws -> Data {
         do {
             let (data, _) = try await URLSession.shared.data(from: apiURL)
             return data

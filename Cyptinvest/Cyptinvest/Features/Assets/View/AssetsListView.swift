@@ -24,7 +24,7 @@ struct AssetsListView: View {
             .edgesIgnoringSafeArea(.trailing)
             .scrollContentBackground(.hidden)
             .task {
-                await assetsViewModel.getAll()
+                await assetsViewModel.getMarketAssets()
             }
         }
     }

@@ -13,13 +13,14 @@ struct EntryPoint: View {
     
     var body: some View {
         NavigationStack(path: $coordinator.navigationPath) {
+            Header()
             ContentView()
                 .navigationDestination(for: CurrentPage.self) { navigation in
                     switch navigation {
                     case .assetsList:
                         AssetsListView(assetsViewModel: AssetsViewModel(manager: NetworkManager()))
                     case .assetDetails:
-                        AssetDetailsView()
+                        AssetDetailsView(assetViewModel: AssetViewModel(manager: NetworkManager()), asset: coordinator.asset)
                     }
                 }
         }

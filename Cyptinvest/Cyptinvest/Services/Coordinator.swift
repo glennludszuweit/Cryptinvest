@@ -10,12 +10,14 @@ import SwiftUI
 
 class Coordinator: ObservableObject {
     @Published var navigationPath = NavigationPath()
+    var asset = Asset(id: "test", symbol: "test", name: "test", image: "test", currentPrice: 0.0, priceChange24H: 0.0)
     
     func assetsList() {
         navigationPath.append(CurrentPage.assetsList)
     }
     
-    func assetDetails() {
+    func assetDetails(asset: Asset) {
+        self.asset = asset
         navigationPath.append(CurrentPage.assetDetails)
     }
 }
