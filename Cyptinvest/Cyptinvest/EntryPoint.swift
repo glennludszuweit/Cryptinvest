@@ -14,7 +14,7 @@ struct EntryPoint: View {
     var body: some View {
         NavigationStack(path: $coordinator.navigationPath) {
             Header()
-            ContentView()
+            CustomTabBar()
                 .navigationDestination(for: CurrentPage.self) { navigation in
                     switch navigation {
                     case .assetsList:
@@ -24,5 +24,11 @@ struct EntryPoint: View {
                     }
                 }
         }
+    }
+}
+
+struct EntryPoint_Previews: PreviewProvider {
+    static var previews: some View {
+        EntryPoint(assetsViewModel: AssetsViewModel(manager: NetworkManager())).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -12,23 +12,6 @@ struct DetailsHeader: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: asset.image)) {
-                phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 35, height: 35)
-                        .padding(.trailing, 5)
-                } else if phase.error != nil {
-                    ProgressView().onAppear{
-                        print(ErrorHandler.imageDoesNotExist.errorDescription!)
-                        
-                    }
-                } else {
-                    ProgressView()
-                }
-            }
             Text(asset.name.capitalized(with: .current)).font(.title).fontWeight(.bold).foregroundColor(Color("OffBlack"))
             Spacer()
             VStack {

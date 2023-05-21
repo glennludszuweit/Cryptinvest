@@ -13,9 +13,32 @@ struct AssetDetailsView: View {
     var body: some View {
         ScrollView {
             DetailsHeader(asset: asset)
+            DetailsChart(asset: asset)
             TransactionButtons()
             DetailsOverview(asset: asset)
             DetailsAdditionalInfo(assetViewModel: AssetViewModel(manager: NetworkManager()), asset: asset)
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                HStack {
+                    Text(asset.symbol.uppercased()).fontWeight(.semibold).foregroundColor(Color("OffBlack")).font(.headline)
+                    AsyncImage(url: URL(string: asset.image)) {
+                        phase in
+                        if let image = phase.image {
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25, height: 25)
+                        } else if phase.error != nil {
+                            ProgressView().onAppear{
+                                print(ErrorHandler.imageDoesNotExist.errorDescription!)
+                                
+                            }
+                        } else {
+                            ProgressView()
+                        }
+                    }
+                }
+            }
         }
     }
 }

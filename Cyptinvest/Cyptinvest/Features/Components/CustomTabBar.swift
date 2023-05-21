@@ -11,6 +11,10 @@ struct CustomTabBar: View {
     @State var currentTab: Tab = .Assets
     @Namespace var animation
     
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
     var body: some View {
         VStack {
             ZStack(alignment: .bottom) {
