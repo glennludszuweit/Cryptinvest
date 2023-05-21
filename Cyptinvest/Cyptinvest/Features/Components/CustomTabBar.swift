@@ -20,7 +20,7 @@ struct CustomTabBar: View {
             ZStack(alignment: .bottom) {
                 TabView(selection: $currentTab) {
                     Group {
-                        AssetsListView()
+                        AssetsListView(assetsViewModel: AssetsViewModel(manager: NetworkManager()))
                             .tag(Tab.Assets)
                         Text("Portfolio")
                             .tag(Tab.Portfolio)

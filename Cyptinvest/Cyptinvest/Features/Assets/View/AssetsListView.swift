@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct AssetsListView: View {
+    @StateObject var assetsViewModel: AssetsViewModel
+    
     var body: some View {
         VStack {
-            SearchBar(assetsViewModel: AssetsViewModel(manager: NetworkManager()))
-            AssetsList(assetsViewModel: AssetsViewModel(manager: NetworkManager()))
+            SearchBar(assetsViewModel: assetsViewModel)
+            AssetsList(assetsViewModel: assetsViewModel)
         }
     }
 }
 
 struct AssetsListView_Previews: PreviewProvider {
     static var previews: some View {
-        AssetsListView()
+        AssetsListView(assetsViewModel: AssetsViewModel(manager: NetworkManager()))
     }
 }
