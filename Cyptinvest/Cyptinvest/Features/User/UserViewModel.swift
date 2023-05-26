@@ -61,10 +61,14 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    func updatePortfolio(asset: Asset, amount: Double, context: NSManagedObjectContext) async{
+    func updatePortfolio(asset: Asset, amount: Double, context: NSManagedObjectContext, operation: String) async{
         if let entity = userAssets.first(where: { $0.id == asset.id}) {
             if amount > 0 {
-                await updateAsset(assetEntity: entity, amount: entity.amount + amount, context: context)
+                if operation == "Sell" && entity.amount >= amount {
+                    await updateAsset(assetEntity: entity, amount: entity.amount - amount, context: context)
+                } else {
+                    await updateAsset(assetEntity: entity, amount: entity.amount + amount, context: context)
+                }
             } else {
                 await  deleteAsset(assetEntity: entity, context: context)
             }

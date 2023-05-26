@@ -218,7 +218,6 @@
 			children = (
 				D4196B0C2A14C61900C4246B /* User */,
 				D4196B0B2A14C5BD00C4246B /* Assets */,
-				D4196B0A2A14C5AB00C4246B /* Portfolio */,
 				D4196B092A14C55500C4246B /* Settings */,
 				D4196B002A14229900C4246B /* Components */,
 			);
@@ -244,13 +243,6 @@
 			children = (
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		D4196B0A2A14C5AB00C4246B /* Portfolio */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Portfolio;
 			sourceTree = "<group>";
 		};
 		D4196B0B2A14C5BD00C4246B /* Assets */ = {

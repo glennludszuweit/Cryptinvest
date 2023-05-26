@@ -10,7 +10,7 @@ import CoreData
 
 struct TransactionView: View {
     @StateObject var userViewModel: UserViewModel
-    @State var quantity: String = "0"
+    @State var quantity: Double = 0
     @Binding var showTransaction: Bool
     @Binding var transactionType: String
     
@@ -24,13 +24,13 @@ struct TransactionView: View {
     var body: some View {
         VStack {
             Group {
-                TextField("Amount", text: $quantity)
+                TextField("Amount", value: ($quantity), formatter: NumberFormatter())
                     .keyboardType(.numberPad)
                     .textFieldStyle(.roundedBorder)
                     .frame(maxWidth: .infinity)
                     .onChange(of: quantity) { newValue in
-                        if newValue.count == 0 {
-                            quantity = "0"
+                        if "\(newValue)".count == 0 {
+                            quantity = 0
                         }
                     }
 
@@ -38,13 +38,13 @@ struct TransactionView: View {
                 HStack {
                     Group {
                         if transactionType == "Sell" {
-                            Text("\(((user.first?.usd ?? 0) + (asset.currentPrice * Double((quantity as NSString).integerValue))).formatted(.currency(code: "USD")))")
+                            Text("\(((user.first?.usd ?? 0) + (asset.currentPrice * quantity)).formatted(.currency(code: "USD")))")
                         } else {
-                            Text("\(((user.first?.usd ?? 0) - (asset.currentPrice * Double((quantity as NSString).integerValue))).formatted(.currency(code: "USD")))")
+                            Text("\(((user.first?.usd ?? 0) - (asset.currentPrice * quantity)).formatted(.currency(code: "USD")))")
                         }
                         
                         Spacer()
-                        Text("\((asset.currentPrice * Double((quantity as NSString).integerValue)).formatted(.currency(code: "USD")))")
+                        Text("\((asset.currentPrice * quantity).formatted(.currency(code: "USD")))")
                     }.font(.caption).fontWeight(.semibold)
                 }.offset(y: -25)
             }.padding()
@@ -52,7 +52,8 @@ struct TransactionView: View {
             Spacer()
             Button(action: {
                 Task {
-                    await userViewModel.updatePortfolio(asset:asset, amount: Double((quantity as NSString).integerValue), context: viewContext)
+                    await userViewModel.updatePortfolio(asset:asset, amount: quantity, context: viewContext, operation: transactionType)
+                    print(userViewModel.userAssets)
                     showTransaction = false
                 }
             }, label: {
