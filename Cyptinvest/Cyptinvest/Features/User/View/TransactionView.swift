@@ -16,13 +16,21 @@ struct TransactionView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    var fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
-    @FetchRequest(entity: UserEntity.entity(), sortDescriptors: [])
-    var user: FetchedResults<UserEntity>
+//    var fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
+//    @FetchRequest(entity: UserEntity.entity(), sortDescriptors: [])
+//    var user: FetchedResults<UserEntity>
     
     var asset: Asset
     var body: some View {
         VStack {
+            HStack {
+                Group {
+                    Text("Enter amount")
+                    Spacer()
+                    Text("Holdings: 5")
+                }.foregroundColor(Color("Black"))
+                    .font(.caption)
+            }.padding(20)
             Group {
                 TextField("Amount", value: ($quantity), formatter: NumberFormatter())
                     .keyboardType(.numberPad)
@@ -38,14 +46,14 @@ struct TransactionView: View {
                 HStack {
                     Group {
                         if transactionType == "Sell" {
-                            Text("\(((user.first?.usd ?? 0) + (asset.currentPrice * quantity)).formatted(.currency(code: "USD")))")
+                            Text("\(((userViewModel.userData.first?.usd ?? 0) + (asset.currentPrice * quantity)).formatted(.currency(code: "USD")))")
                         } else {
-                            Text("\(((user.first?.usd ?? 0) - (asset.currentPrice * quantity)).formatted(.currency(code: "USD")))")
+                            Text("\(((userViewModel.userData.first?.usd ?? 0) - (asset.currentPrice * quantity)).formatted(.currency(code: "USD")))")
                         }
                         
                         Spacer()
                         Text("\((asset.currentPrice * quantity).formatted(.currency(code: "USD")))")
-                    }.font(.caption).fontWeight(.semibold)
+                    }.font(.subheadline).fontWeight(.semibold)
                 }.offset(y: -25)
             }.padding()
                 .foregroundColor(Color("Black"))
@@ -53,7 +61,6 @@ struct TransactionView: View {
             Button(action: {
                 Task {
                     await userViewModel.updatePortfolio(asset:asset, amount: quantity, context: viewContext, operation: transactionType)
-                    print(userViewModel.userAssets)
                     showTransaction = false
                 }
             }, label: {

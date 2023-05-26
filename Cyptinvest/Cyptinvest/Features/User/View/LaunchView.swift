@@ -24,13 +24,17 @@ struct LaunchView: UIViewControllerRepresentable {
         
         if result.isEmpty {
             Task {
-                await userViewModel.saveUserData(context: viewContext)
+                await userViewModel.saveUserData()
                 guard let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {return}
                 let sqlitePath = url.appendingPathComponent("Cryptinvest.sqlite")
                 print(sqlitePath)
             }
         }
-        
+        Task {
+            guard let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {return}
+            let sqlitePath = url.appendingPathComponent("Cryptinvest.sqlite")
+            print(sqlitePath)
+        }
         let storyboard = UIStoryboard(name: "Launch", bundle: Bundle.main)
         let launchViewController = storyboard.instantiateViewController(withIdentifier: "LaunchViewController")
         return launchViewController

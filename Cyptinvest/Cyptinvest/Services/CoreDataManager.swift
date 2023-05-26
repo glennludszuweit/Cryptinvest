@@ -23,6 +23,12 @@ class CoreDataManager: CoreDataProtocol {
         save()
     }
     
+    func updateUserData(userEntity: UserEntity, usd: Double, worth: Double) throws {
+        userEntity.usd = usd
+        userEntity.worth = worth
+        save()
+    }
+    
     func buyAsset(asset: Asset, amount: Double) throws {
         let assetEntity = AssetEntity(context: context)
         assetEntity.id = asset.id
