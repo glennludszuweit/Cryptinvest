@@ -27,7 +27,7 @@ struct DetailsChart: View {
                     }
                     path.addLine(to: CGPoint(x: xPosition, y: yPosition))
                 }
-            }.stroke(priceChange > 0 ? .green : .red, style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
+            }.stroke(priceChange > 0 ? Color("Green") : Color("Red"), style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
         }.frame(height: 250)
             .onAppear {
                 data = asset.sparklineIn7D?.price ?? []

@@ -66,10 +66,16 @@ struct Asset: Identifiable, Codable {
     var rank: Int {
         return Int(marketCapRank ?? 0)
     }
-    
 }
 
 struct SparklineIn7D: Codable {
     let price: [Double]?
 }
 
+//struct UserAsset {
+//    var id: String
+//    var name: String
+//    var image: String
+//    var amount: Double
+//    var priceBought: Double
+//}

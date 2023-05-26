@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct Header: View {
+    var fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
+    @FetchRequest(entity: UserEntity.entity(), sortDescriptors: [])
+    var result: FetchedResults<UserEntity>
+    
     var body: some View {
         HStack{
             Image("logo", label: Text("Cryptinvest"))
@@ -16,9 +21,9 @@ struct Header: View {
                 .frame(height: 50)
                 .padding(5)
             Spacer()
-            Text("$10,000.00")
+            Text("\((result.first?.usd ?? 0).formatted(.currency(code: "USD")))")
                 .fontWeight(.semibold)
-                .foregroundColor(Color("OffBlack"))
+                .foregroundColor(Color("Black"))
                 .padding()
         }.padding(.bottom,-10)
     }

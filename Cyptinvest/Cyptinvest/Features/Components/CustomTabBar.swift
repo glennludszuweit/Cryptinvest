@@ -17,6 +17,7 @@ struct CustomTabBar: View {
     
     var body: some View {
         VStack {
+            Header()
             ZStack(alignment: .bottom) {
                 TabView(selection: $currentTab) {
                     Group {

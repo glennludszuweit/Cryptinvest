@@ -18,8 +18,9 @@ struct AssetsList: View {
         .offset(y: -10)
         .padding(.top, -10)
         .frame( maxWidth: .infinity)
-        .edgesIgnoringSafeArea(.leading)
-        .edgesIgnoringSafeArea(.trailing)
+        .ignoresSafeArea()
+//        .edgesIgnoringSafeArea(.leading)
+//        .edgesIgnoringSafeArea(.trailing)
         .scrollContentBackground(.hidden)
         .task {
             await assetsViewModel.getMarketAssets()

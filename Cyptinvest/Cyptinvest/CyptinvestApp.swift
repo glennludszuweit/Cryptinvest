@@ -13,7 +13,7 @@ struct CyptinvestApp: App {
 
     var body: some Scene {
         WindowGroup {
-            EntryPoint(assetsViewModel: AssetsViewModel(manager: NetworkManager()))
+            EntryPoint()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext).environmentObject(Coordinator())
         }
     }

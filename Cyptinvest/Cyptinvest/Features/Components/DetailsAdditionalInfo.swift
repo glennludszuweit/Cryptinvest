@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailsAdditionalInfo: View {
-    @StateObject var assetViewModel: AssetViewModel
+    @StateObject var assetViewModel: AssetDetailsViewModel
     var asset: Asset
     
     var body: some View {
@@ -19,7 +19,7 @@ struct DetailsAdditionalInfo: View {
             }
             Divider()
             LazyVGrid(columns: [GridItem(.flexible())], alignment: .center, spacing: nil, pinnedViews: []) {
-                Text(assetViewModel.assetDetail?.description?.en ?? "").foregroundColor(Color("OffBlack").opacity(0.75))
+                Text(assetViewModel.assetDetail?.description?.en ?? "").foregroundColor(Color("Black").opacity(0.75))
             }
         }.padding()
         .task {
@@ -30,6 +30,6 @@ struct DetailsAdditionalInfo: View {
 
 struct DetailsAdditionalInfo_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsAdditionalInfo(assetViewModel: AssetViewModel(manager: NetworkManager()), asset: Asset(id: "test", symbol: "test", name: "test", image: "test", currentPrice: 0.0))
+        DetailsAdditionalInfo(assetViewModel: AssetDetailsViewModel(manager: NetworkManager()), asset: Asset(id: "test", symbol: "test", name: "test", image: "test", currentPrice: 0.0))
     }
 }

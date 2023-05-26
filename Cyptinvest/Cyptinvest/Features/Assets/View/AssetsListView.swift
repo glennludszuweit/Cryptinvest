@@ -6,14 +6,23 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AssetsListView: View {
     @StateObject var assetsViewModel: AssetsViewModel
     
+    var fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
+    @FetchRequest(entity: UserEntity.entity(), sortDescriptors: [])
+    var result: FetchedResults<UserEntity>
+    
     var body: some View {
-        VStack {
-            SearchBar(assetsViewModel: assetsViewModel)
-            AssetsList(assetsViewModel: assetsViewModel)
+        if !result.isEmpty {
+            VStack {
+                SearchBar(assetsViewModel: assetsViewModel)
+                AssetsList(assetsViewModel: assetsViewModel)
+            }.navigationBarHidden(true)
+        } else {
+            ProgressView()
         }
     }
 }

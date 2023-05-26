@@ -1,5 +1,5 @@
 //
-//  AssetViewModel.swift
+//  AssetDetailsViewModel.swift
 //  Cyptinvest
 //
 //  Created by Glenn Ludszuweit on 19/05/2023.
@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-class AssetViewModel: ObservableObject {
+class AssetDetailsViewModel: ObservableObject {
     @Published var assetDetail: AssetDetail?
     @Published var customError: ErrorHandler?
     

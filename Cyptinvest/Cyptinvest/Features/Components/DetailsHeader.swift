@@ -12,13 +12,13 @@ struct DetailsHeader: View {
     
     var body: some View {
         HStack {
-            Text(asset.name.capitalized(with: .current)).font(.title).fontWeight(.bold).foregroundColor(Color("OffBlack"))
+            Text(asset.name.capitalized(with: .current)).font(.title).fontWeight(.bold).foregroundColor(Color("Black"))
             Spacer()
             VStack {
                 HStack{
                     Spacer()
                     Text(asset.currentPrice.formatted(.currency(code: "USD")))
-                        .foregroundColor(Color("OffBlack").opacity(0.8))
+                        .foregroundColor(Color("Black").opacity(0.8))
                         .fontWeight(.semibold)
                 }
                 HStack {
@@ -28,7 +28,7 @@ struct DetailsHeader: View {
                         Image(systemName: asset.priceChangePercentage24H! >= 0.0 ? "arrowtriangle.up.fill" : "arrowtriangle.down.fill")
                             .resizable()
                             .frame(width: 10, height: 10)
-                    }.foregroundColor(asset.priceChangePercentage24H! >= 0.0 ? .green : .red)
+                    }.foregroundColor(asset.priceChangePercentage24H! >= 0.0 ? Color("Green") : Color("Red"))
                         .offset(y: -10)
                         .font(.custom("", size: 14))
                 }

@@ -9,16 +9,16 @@ import SwiftUI
 
 struct EntryPoint: View {
     @EnvironmentObject var coordinator: Coordinator
-    @StateObject var assetsViewModel: AssetsViewModel
+    @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
         NavigationStack(path: $coordinator.navigationPath) {
-            Header()
-            CustomTabBar()
+            LaunchView(userViewModel: UserViewModel(manager: CoreDataManager(context: viewContext), context: viewContext)).edgesIgnoringSafeArea(.all).offset(y: 150)
+//            CustomTabBar()
                 .navigationDestination(for: CurrentPage.self) { navigation in
                     switch navigation {
                     case .assetsList:
-                        AssetsListView(assetsViewModel: AssetsViewModel(manager: NetworkManager()))
+                        CustomTabBar()
                     case .assetDetails:
                         AssetDetailsView(asset: coordinator.asset)
                     }
@@ -29,6 +29,6 @@ struct EntryPoint: View {
 
 struct EntryPoint_Previews: PreviewProvider {
     static var previews: some View {
-        EntryPoint(assetsViewModel: AssetsViewModel(manager: NetworkManager())).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        EntryPoint().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

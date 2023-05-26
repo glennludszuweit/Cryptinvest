@@ -13,8 +13,10 @@ struct DetailsStats: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(title).foregroundColor(Color("OffBlack").opacity(0.75)).padding(.bottom, 3)
-            Text(data).foregroundColor(Color("OffBlack")).fontWeight(.semibold)
+            Group {
+                Text(title).opacity(0.75).padding(.bottom, 3)
+                Text(data).fontWeight(.semibold)
+            }.foregroundColor(Color("Black"))
         }.padding()
             .font(.custom("", size: 14))
     }
