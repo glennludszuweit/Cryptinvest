@@ -42,6 +42,7 @@
 		D4196B5A2A17BE3E00C4246B /* AssetsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B592A17BE3E00C4246B /* AssetsList.swift */; };
 		D4196B5F2A1A609F00C4246B /* DetailsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B5E2A1A609F00C4246B /* DetailsChart.swift */; };
 		D4196B612A1A97AB00C4246B /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196B602A1A97AB00C4246B /* LaunchView.swift */; };
+		D458EEE62A21385E00D6EAAD /* UserPortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458EEE52A21385E00D6EAAD /* UserPortfolioView.swift */; };
 		D4E19FCE2A1DFE9F00CAF40F /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E19FCD2A1DFE9F00CAF40F /* TransactionView.swift */; };
 		D4E19FD02A1E23BB00CAF40F /* CoreDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E19FCF2A1E23BB00CAF40F /* CoreDataProtocol.swift */; };
 		D4E19FD22A1E23CC00CAF40F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E19FD12A1E23CC00CAF40F /* CoreDataManager.swift */; };
@@ -104,6 +105,7 @@
 		D4196B592A17BE3E00C4246B /* AssetsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsList.swift; sourceTree = "<group>"; };
 		D4196B5E2A1A609F00C4246B /* DetailsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsChart.swift; sourceTree = "<group>"; };
 		D4196B602A1A97AB00C4246B /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		D458EEE52A21385E00D6EAAD /* UserPortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPortfolioView.swift; sourceTree = "<group>"; };
 		D4E19FCD2A1DFE9F00CAF40F /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		D4E19FCF2A1E23BB00CAF40F /* CoreDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProtocol.swift; sourceTree = "<group>"; };
 		D4E19FD12A1E23CC00CAF40F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -218,7 +220,6 @@
 			children = (
 				D4196B0C2A14C61900C4246B /* User */,
 				D4196B0B2A14C5BD00C4246B /* Assets */,
-				D4196B092A14C55500C4246B /* Settings */,
 				D4196B002A14229900C4246B /* Components */,
 			);
 			path = Features;
@@ -236,13 +237,6 @@
 				D4196B3B2A16208700C4246B /* Coordinator.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		D4196B092A14C55500C4246B /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		D4196B0B2A14C5BD00C4246B /* Assets */ = {
@@ -281,6 +275,7 @@
 				D4196B602A1A97AB00C4246B /* LaunchView.swift */,
 				D4196B252A14CC9100C4246B /* LaunchViewController.swift */,
 				D4E19FCD2A1DFE9F00CAF40F /* TransactionView.swift */,
+				D458EEE52A21385E00D6EAAD /* UserPortfolioView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -460,6 +455,7 @@
 				D4196B4E2A178C7F00C4246B /* AssetDetailsViewModel.swift in Sources */,
 				D4196B612A1A97AB00C4246B /* LaunchView.swift in Sources */,
 				D4196AD22A14224B00C4246B /* CyptinvestApp.swift in Sources */,
+				D458EEE62A21385E00D6EAAD /* UserPortfolioView.swift in Sources */,
 				D4196B322A14D36400C4246B /* ErrorHandler.swift in Sources */,
 				D4196B5A2A17BE3E00C4246B /* AssetsList.swift in Sources */,
 				D4196B462A165AA300C4246B /* CustomTabBar.swift in Sources */,

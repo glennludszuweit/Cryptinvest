@@ -18,9 +18,11 @@ struct EntryPoint: View {
                 .navigationDestination(for: CurrentPage.self) { navigation in
                     switch navigation {
                     case .assetsList:
-                        CustomTabBar()
+                        AssetsListView(assetsViewModel: AssetsViewModel(manager: NetworkManager()))
                     case .assetDetails:
                         AssetDetailsView(asset: coordinator.asset)
+                    case .userPortfolio:
+                        UserPortfolioView()
                     }
                 }
         }

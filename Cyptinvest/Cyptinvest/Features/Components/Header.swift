@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct Header: View {
+    @EnvironmentObject var coordinator: Coordinator
+    
     var fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
     @FetchRequest(entity: UserEntity.entity(), sortDescriptors: [])
     var result: FetchedResults<UserEntity>
@@ -21,10 +23,14 @@ struct Header: View {
                 .frame(height: 50)
                 .padding(5)
             Spacer()
-            Text("\((result.first?.usd ?? 0).formatted(.currency(code: "USD")))")
-                .fontWeight(.semibold)
-                .foregroundColor(Color("Black"))
+            Image(systemName: "person.fill")
+                .resizable()
+                .frame(width: 25, height: 25)
+                .foregroundColor(Color("Purple"))
                 .padding()
+                .onTapGesture {
+                    coordinator.userPortfolio()
+                }
         }.padding(.bottom,-10)
     }
 }

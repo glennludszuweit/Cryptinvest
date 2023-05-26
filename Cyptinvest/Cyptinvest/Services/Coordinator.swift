@@ -20,9 +20,14 @@ class Coordinator: ObservableObject {
         self.asset = asset
         navigationPath.append(CurrentPage.assetDetails)
     }
+    
+    func userPortfolio() {
+        navigationPath.append(CurrentPage.userPortfolio)
+    }
 }
 
 enum CurrentPage {
     case assetsList
     case assetDetails
+    case userPortfolio
 }

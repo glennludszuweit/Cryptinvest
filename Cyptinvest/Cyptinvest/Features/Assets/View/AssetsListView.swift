@@ -18,6 +18,7 @@ struct AssetsListView: View {
     var body: some View {
         if !result.isEmpty {
             VStack {
+                Header()
                 SearchBar(assetsViewModel: assetsViewModel)
                 AssetsList(assetsViewModel: assetsViewModel)
             }.navigationBarHidden(true)
