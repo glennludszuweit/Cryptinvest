@@ -38,7 +38,7 @@ class UserViewModel: ObservableObject {
                 await  deleteAsset(assetEntity: entity, context: context)
             }
         } else {
-            await buyAsset(asset: asset, amount: amount, context: context)
+            await buyAsset(asset: asset, amount: amount, priceBought: asset.currentPrice, context: context)
             await updateUserData(userentity: userData.first!, usd: (userData.first?.usd ?? 0) - (asset.currentPrice * amount), worth: 10000.00, context: context)
         }
     }
@@ -81,7 +81,7 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    func getUserAssets(context: NSManagedObjectContext) {
+    private func getUserAssets(context: NSManagedObjectContext) {
         let request = NSFetchRequest<AssetEntity>(entityName: "AssetEntity")
         do {
             userAssets = try context.fetch(request)
@@ -94,9 +94,9 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    private func buyAsset(asset: Asset, amount: Double, context: NSManagedObjectContext) async {
+    private func buyAsset(asset: Asset, amount: Double, priceBought: Double, context: NSManagedObjectContext) async {
         do {
-            try manager.buyAsset(asset: asset, amount: amount)
+            try manager.buyAsset(asset: asset, amount: amount, priceBought: priceBought)
             applyChanges(context: context)
         } catch let error {
             if error as? ErrorHandler == .parsingError {

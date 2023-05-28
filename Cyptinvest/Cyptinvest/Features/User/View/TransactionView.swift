@@ -11,6 +11,7 @@ import CoreData
 struct TransactionView: View {
     @StateObject var userViewModel: UserViewModel
     @State var quantity: Double = 0
+    @State var holdings: Double = 0
     @Binding var showTransaction: Bool
     @Binding var transactionType: String
     
@@ -20,12 +21,10 @@ struct TransactionView: View {
     var body: some View {
         VStack {
             HStack {
-                Group {
-                    Text("Enter amount")
-                    Spacer()
-                    Text("Holdings: 5")
-                }.foregroundColor(Color("Black"))
-                    .font(.caption)
+                Spacer()
+                Text(String(format: "Holdings: %.2f", transactionType == "Sell" ? holdings - quantity : holdings + quantity))
+                    .foregroundColor(Color("Black"))
+                    .font(.subheadline).fontWeight(.semibold)
             }.padding(20)
             Group {
                 TextField("Amount", value: ($quantity), formatter: NumberFormatter())
@@ -37,7 +36,7 @@ struct TransactionView: View {
                             quantity = 0
                         }
                     }
-
+                
                 
                 HStack {
                     Group {
@@ -65,6 +64,8 @@ struct TransactionView: View {
             .tint(transactionType == "Buy" ? Color("Green") : Color("Red"))
             .padding(25)
             .buttonStyle(.borderedProminent)
+        }.onAppear {
+            holdings = asset.currentHoldings ?? 0
         }
     }
 }

@@ -29,10 +29,11 @@ class CoreDataManager: CoreDataProtocol {
         save()
     }
     
-    func buyAsset(asset: Asset, amount: Double) throws {
+    func buyAsset(asset: Asset, amount: Double, priceBought: Double) throws {
         let assetEntity = AssetEntity(context: context)
         assetEntity.id = asset.id
         assetEntity.amount = amount
+        assetEntity.priceBought = priceBought
         save()
     }
     

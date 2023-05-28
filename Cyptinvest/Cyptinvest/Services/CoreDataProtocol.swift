@@ -12,7 +12,7 @@ import SwiftUI
 protocol CoreDataProtocol {
     func saveUserData(user: UserModel) throws
     func updateUserData(userEntity: UserEntity, usd: Double, worth: Double) throws
-    func buyAsset(asset: Asset, amount: Double) throws
+    func buyAsset(asset: Asset, amount: Double, priceBought: Double) throws
     func updateAsset(assetEntity: AssetEntity, amount: Double) throws
     func deleteAsset(assetEntity: AssetEntity) throws
     func save()

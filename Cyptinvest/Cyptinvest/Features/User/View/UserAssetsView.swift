@@ -54,6 +54,8 @@ struct UserAssetsView: View {
                         }
                     }
                 }
+                //percentageDifference((assetDetail.marketData?.currentPrice?["usd"] ?? 0) * item.amount, )
+                //(assetDetail.marketData?.currentPrice?["usd"] ?? 0) * item.amount
                 
                 DispatchQueue.main.asyncAfter (deadline: .now() + 1) {
                     userViewModel.assets.forEach { item in

@@ -44,9 +44,6 @@ struct AssetsList: View {
                 } else {
                     result.append(element)
                 }
-                print(userViewModel.assets.count)
-                print(assetsViewModel.assets.count)
-                print((userViewModel.assets + assetsViewModel.assets).count)
             }
         }
     }
