@@ -20,7 +20,7 @@ struct TransactionButtons: View {
                     showTransaction = true
                 } label: {
                     Text("Sell").frame(maxWidth: .infinity)
-                }.tint(Color("Red"))
+                }.tint(Color("Red")).disabled(asset.currentHoldings ?? 0 <= 0)
                 Button {
                     transactionType = "Buy"
                     showTransaction = true

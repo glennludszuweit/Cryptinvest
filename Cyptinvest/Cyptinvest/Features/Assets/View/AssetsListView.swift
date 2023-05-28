@@ -11,6 +11,8 @@ import CoreData
 struct AssetsListView: View {
     @StateObject var assetsViewModel: AssetsViewModel
     
+    @Environment(\.managedObjectContext) private var viewContext
+    
     var fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
     @FetchRequest(entity: UserEntity.entity(), sortDescriptors: [])
     var result: FetchedResults<UserEntity>
@@ -20,7 +22,7 @@ struct AssetsListView: View {
             VStack {
                 Header()
                 SearchBar(assetsViewModel: assetsViewModel)
-                AssetsList(assetsViewModel: assetsViewModel)
+                AssetsList(assetsViewModel: assetsViewModel, userViewModel: UserViewModel(manager: CoreDataManager(context: viewContext), context: viewContext), assetViewModel: AssetDetailsViewModel(manager: NetworkManager()))
             }.navigationBarHidden(true)
         } else {
             ProgressView()

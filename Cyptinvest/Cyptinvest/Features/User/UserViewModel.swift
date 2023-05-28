@@ -12,6 +12,7 @@ import CoreData
 @MainActor
 class UserViewModel: ObservableObject {
     @Published var customError: ErrorHandler?
+    @Published var assets: [Asset] = []
     @Published var userData: [UserEntity] = []
     @Published var userAssets: [AssetEntity] = []
     
@@ -80,7 +81,7 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    private func getUserAssets(context: NSManagedObjectContext) {
+    func getUserAssets(context: NSManagedObjectContext) {
         let request = NSFetchRequest<AssetEntity>(entityName: "AssetEntity")
         do {
             userAssets = try context.fetch(request)

@@ -17,7 +17,10 @@ struct AssetDetailsView: View {
             TransactionButtons(asset: asset)
             DetailsOverview(asset: asset)
             DetailsAdditionalInfo(assetViewModel: AssetDetailsViewModel(manager: NetworkManager()), asset: asset)
-        }.toolbar {
+        }.onAppear {
+            print(asset.currentHoldings)
+        }
+        .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 HStack {
                     Text(asset.symbol.uppercased()).fontWeight(.semibold).foregroundColor(Color("Black")).font(.headline)

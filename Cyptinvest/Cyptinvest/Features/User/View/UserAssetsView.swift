@@ -10,7 +10,6 @@ import SwiftUI
 struct UserAssetsView: View {
     @StateObject var userViewModel: UserViewModel
     @StateObject var assetViewModel: AssetDetailsViewModel
-    @State var assets: [Asset] = []
     @State var assetPrices: [Double] = []
     @State var assetsTotalWorth: Double = 10000
     
@@ -33,7 +32,7 @@ struct UserAssetsView: View {
 //            List {
             USDCell(amount: userViewModel.userData.first?.usd ?? 0)
 //            }
-            List(assets) { asset in
+            List(userViewModel.assets) { asset in
                 AssetsListCell(asset: asset)
             }
             .listStyle(.plain)
@@ -46,18 +45,18 @@ struct UserAssetsView: View {
             .scrollContentBackground(.hidden)
         }
         .onAppear {
-            if assets.count == 0 {
+            if userViewModel.assets.count == 0 {
                 userViewModel.userAssets.forEach { item in
                     Task {
                         await assetViewModel.getCoinDetails("\(API.coingeckoGetCoinApi)\(item.id?.lowercased() ?? "bitcoin")\(API.coingeckoGetCoinApiQuery)")
                         if let assetDetail = assetViewModel.assetDetail {
-                            assets.append(Asset(id: assetDetail.id ?? "", symbol: assetDetail.symbol ?? "", name: assetDetail.name ?? "", image: assetDetail.image?.thumb ?? "", currentPrice: assetDetail.marketData?.currentPrice?["usd"] ?? 0, priceChangePercentage24H: assetDetail.marketData?.priceChangePercentage24h, sparklineIn7D: assetDetail.marketData?.sparkLine7D, currentHoldings: item.amount))
+                            userViewModel.assets.append(Asset(id: assetDetail.id ?? "", symbol: assetDetail.symbol ?? "", name: assetDetail.name ?? "", image: assetDetail.image?.thumb ?? "", currentPrice: assetDetail.marketData?.currentPrice?["usd"] ?? 0, priceChangePercentage24H: assetDetail.marketData?.priceChangePercentage24h, sparklineIn7D: assetDetail.marketData?.sparkLine7D, currentHoldings: item.amount))
                         }
                     }
                 }
                 
                 DispatchQueue.main.asyncAfter (deadline: .now() + 1) {
-                    assets.forEach { item in
+                    userViewModel.assets.forEach { item in
                         assetPrices.append(item.currentPrice * (item.currentHoldings ?? 0))
                     }
                     assetsTotalWorth = assetPrices.reduce(0.0) { $0 + $1 } + (userViewModel.userData.first?.usd ?? 0)
