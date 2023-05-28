@@ -22,7 +22,7 @@ struct EntryPoint: View {
                     case .assetDetails:
                         AssetDetailsView(asset: coordinator.asset)
                     case .userPortfolio:
-                        UserPortfolioView(userViewModel: UserViewModel(manager: CoreDataManager(context: viewContext), context: viewContext), assetViewModel: AssetDetailsViewModel(manager: NetworkManager()))
+                        UserAssetsView(userViewModel: UserViewModel(manager: CoreDataManager(context: viewContext), context: viewContext), assetViewModel: AssetDetailsViewModel(manager: NetworkManager()))
                     }
                 }
         }

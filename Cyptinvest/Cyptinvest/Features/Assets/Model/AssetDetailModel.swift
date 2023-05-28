@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AssetDetail: Codable {
+struct AssetDetail: Codable, Identifiable {
     let id, symbol, name: String?
     let blockTimeInMinutes: Int?
     let hashingAlgorithm: String?
@@ -50,8 +50,12 @@ struct Description: Codable {
 
 struct MarketData: Codable {
     let currentPrice: [String:Double]?
+    let priceChangePercentage24h: Double?
+    let sparkLine7D: SparklineIn7D?
     
     enum CodingKeys: String, CodingKey {
         case currentPrice = "current_price"
+        case priceChangePercentage24h = "price_change_percentage_24h"
+        case sparkLine7D = "sparkline_7d"
     }
 }

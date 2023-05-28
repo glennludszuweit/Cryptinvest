@@ -16,10 +16,6 @@ struct TransactionView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-//    var fetchRequest: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
-//    @FetchRequest(entity: UserEntity.entity(), sortDescriptors: [])
-//    var user: FetchedResults<UserEntity>
-    
     var asset: Asset
     var body: some View {
         VStack {
