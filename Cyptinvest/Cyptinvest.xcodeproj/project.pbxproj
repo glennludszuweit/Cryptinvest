@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D411A9D62A24C71E004A14E6 /* AssetsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D411A9D52A24C71E004A14E6 /* AssetsViewModelTests.swift */; };
 		D4196AD22A14224B00C4246B /* CyptinvestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4196AD12A14224B00C4246B /* CyptinvestApp.swift */; };
 		D4196AD62A14224C00C4246B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4196AD52A14224C00C4246B /* Assets.xcassets */; };
 		D4196AD92A14224C00C4246B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4196AD82A14224C00C4246B /* Preview Assets.xcassets */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D411A9D52A24C71E004A14E6 /* AssetsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewModelTests.swift; sourceTree = "<group>"; };
 		D4196ACE2A14224B00C4246B /* Cyptinvest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cyptinvest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4196AD12A14224B00C4246B /* CyptinvestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyptinvestApp.swift; sourceTree = "<group>"; };
 		D4196AD52A14224C00C4246B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				D458EEF82A24B41000D6EAAD /* FakeNetworkManager.swift */,
 				D458EEFE2A24B6A800D6EAAD /* FakeCoreDataManager.swift */,
 				D458EEFC2A24B60E00D6EAAD /* UserViewModelTests.swift */,
+				D411A9D52A24C71E004A14E6 /* AssetsViewModelTests.swift */,
 			);
 			path = CyptinvestTests;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				D458EEFD2A24B60E00D6EAAD /* UserViewModelTests.swift in Sources */,
 				D458EEFF2A24B6A800D6EAAD /* FakeCoreDataManager.swift in Sources */,
 				D458EEF92A24B41000D6EAAD /* FakeNetworkManager.swift in Sources */,
+				D411A9D62A24C71E004A14E6 /* AssetsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
