@@ -1,5 +1,5 @@
 //
-//  TransactionView.swift
+//  Transaction.swift
 //  Cyptinvest
 //
 //  Created by Glenn Ludszuweit on 24/05/2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct TransactionView: View {
+struct Transaction: View {
     @StateObject var userViewModel: UserViewModel
     @State var quantity: Double = 0
     @State var holdings: Double = 0

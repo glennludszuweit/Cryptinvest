@@ -52,7 +52,7 @@ class AssetsViewModel: ObservableObject {
                 Task {
                     await assetViewModel.getCoinDetails("\(API.coingeckoGetCoinApi)\(item.id?.lowercased() ?? "bitcoin")\(API.coingeckoGetCoinApiQuery)")
                     if let assetDetail = assetViewModel.assetDetail {
-                        userViewModel.assets.append(Asset(id: assetDetail.id ?? "", symbol: assetDetail.symbol ?? "", name: assetDetail.name ?? "", image: assetDetail.image?.thumb ?? "", currentPrice: assetDetail.marketData?.currentPrice?["usd"] ?? 0, priceChangePercentage24H: assetDetail.marketData?.priceChangePercentage24h, sparklineIn7D: assetDetail.marketData?.sparkLine7D, currentHoldings: item.amount))
+                        userViewModel.assets.append(Asset(id: assetDetail.id ?? "", symbol: assetDetail.symbol ?? "", name: assetDetail.name ?? "", image: assetDetail.image?.thumb ?? "", currentPrice: assetDetail.marketData?.currentPrice?["usd"] ?? 0, marketCap: assetDetail.marketData?.marketCap?["usd"], fullyDilutedValuation: assetDetail.marketData?.fullyDilutedValuation?["usd"], totalVolume: assetDetail.marketData?.totalVolume?["usd"], priceChangePercentage24H: assetDetail.marketData?.priceChangePercentage24h, circulatingSupply: assetDetail.marketData?.circulatingSupply, totalSupply: assetDetail.marketData?.totalSupply, maxSupply: assetDetail.marketData?.maxSupply, sparklineIn7D: assetDetail.marketData?.sparkLine7D, currentHoldings: item.amount))
                     }
                 }
             }

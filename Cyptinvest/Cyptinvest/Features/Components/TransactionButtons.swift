@@ -30,7 +30,7 @@ struct TransactionButtons: View {
             }.buttonStyle(.borderedProminent)
                 .padding(20)
         }.sheet(isPresented: $showTransaction) {
-            TransactionView(userViewModel: UserViewModel(manager: CoreDataManager(context: viewContext), context: viewContext), showTransaction: $showTransaction, transactionType: $transactionType, asset: asset)
+            Transaction(userViewModel: UserViewModel(manager: CoreDataManager(context: viewContext), context: viewContext), showTransaction: $showTransaction, transactionType: $transactionType, asset: asset)
                 .presentationDetents([.fraction(0.4)])
         }
     }

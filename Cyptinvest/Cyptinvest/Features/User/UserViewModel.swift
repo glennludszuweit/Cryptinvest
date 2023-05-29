@@ -15,6 +15,8 @@ class UserViewModel: ObservableObject {
     @Published var assets: [Asset] = []
     @Published var userData: [UserEntity] = []
     @Published var userAssets: [AssetEntity] = []
+    @Published var assetPrices: [Double] = []
+    @Published var assetsTotalWorth: Double = 10000
     
     var manager: CoreDataProtocol
     
@@ -40,6 +42,26 @@ class UserViewModel: ObservableObject {
         } else {
             await buyAsset(asset: asset, amount: amount, priceBought: asset.currentPrice, context: context)
             await updateUserData(userentity: userData.first!, usd: (userData.first?.usd ?? 0) - (asset.currentPrice * amount), worth: 10000.00, context: context)
+        }
+    }
+    
+    func populateUserAssetsList(assetViewModel: AssetDetailsViewModel) {
+        userAssets.forEach { item in
+            Task {
+                await assetViewModel.getCoinDetails("\(API.coingeckoGetCoinApi)\(item.id?.lowercased() ?? "bitcoin")\(API.coingeckoGetCoinApiQuery)")
+                if let assetDetail = assetViewModel.assetDetail {
+                    assets.append(Asset(id: assetDetail.id ?? "", symbol: assetDetail.symbol ?? "", name: assetDetail.name ?? "", image: assetDetail.image?.thumb ?? "", currentPrice: assetDetail.marketData?.currentPrice?["usd"] ?? 0, marketCap: assetDetail.marketData?.marketCap?["usd"], fullyDilutedValuation: assetDetail.marketData?.fullyDilutedValuation?["usd"], totalVolume: assetDetail.marketData?.totalVolume?["usd"], priceChangePercentage24H: assetDetail.marketData?.priceChangePercentage24h, circulatingSupply: assetDetail.marketData?.circulatingSupply, totalSupply: assetDetail.marketData?.totalSupply, maxSupply: assetDetail.marketData?.maxSupply, sparklineIn7D: assetDetail.marketData?.sparkLine7D, currentHoldings: item.amount))
+                }
+            }
+        }
+    }
+    
+    func calculateUsersWorth() {
+        DispatchQueue.main.asyncAfter (deadline: .now() + 1) {
+            self.assets.forEach { item in
+                self.assetPrices.append(item.currentPrice * (item.currentHoldings ?? 0))
+            }
+            self.assetsTotalWorth = self.assetPrices.reduce(0.0) { $0 + $1 } + (self.userData.first?.usd ?? 0)
         }
     }
     
