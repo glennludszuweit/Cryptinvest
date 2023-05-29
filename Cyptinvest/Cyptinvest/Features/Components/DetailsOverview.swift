@@ -23,7 +23,7 @@ struct DetailsOverview: View {
             Divider()
             LazyVGrid(columns: columns, alignment: .leading, spacing: nil, pinnedViews: []) {
                 DetailsStats(title: "Market Cap:", data: (asset.marketCap?.formatted(.currency(code: "USD"))) ?? "")
-                DetailsStats(title: "24 Hour Trading Vol:", data: (asset.totalVolume?.formatted(.currency(code: "USD"))) ?? "")
+                DetailsStats(title: "Trading Volume:", data: (asset.totalVolume?.formatted(.currency(code: "USD"))) ?? "")
                 DetailsStats(title: "Fully Diluted Valuation:", data: (asset.fullyDilutedValuation?.formatted(.currency(code: "USD"))) ?? "")
                 DetailsStats(title: "Circulating Supply:", data: (asset.circulatingSupply?.formatted(.currency(code: "USD"))) ?? "")
                 DetailsStats(title: "Total Supply:", data: (asset.totalSupply?.formatted(.currency(code: "USD"))) ?? "")

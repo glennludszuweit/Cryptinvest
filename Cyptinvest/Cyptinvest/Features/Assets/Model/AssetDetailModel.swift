@@ -52,10 +52,22 @@ struct MarketData: Codable {
     let currentPrice: [String:Double]?
     let priceChangePercentage24h: Double?
     let sparkLine7D: SparklineIn7D?
+    let marketCap: [String:Double]?
+    let totalVolume: [String:Double]?
+    let fullyDilutedValuation: [String:Double]?
+    let circulatingSupply: Double?
+    let totalSupply: Double?
+    let maxSupply: Double?
     
     enum CodingKeys: String, CodingKey {
         case currentPrice = "current_price"
         case priceChangePercentage24h = "price_change_percentage_24h"
         case sparkLine7D = "sparkline_7d"
+        case marketCap = "market_cap"
+        case totalVolume = "total_volume"
+        case fullyDilutedValuation = "fully_diluted_valuation"
+        case circulatingSupply = "circulating_supply"
+        case totalSupply = "total_supply"
+        case maxSupply = "max_supply"
     }
 }

@@ -17,8 +17,6 @@ struct AssetDetailsView: View {
             TransactionButtons(asset: asset)
             DetailsOverview(asset: asset)
             DetailsAdditionalInfo(assetViewModel: AssetDetailsViewModel(manager: NetworkManager()), asset: asset)
-        }.onAppear {
-            print(asset.currentHoldings)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

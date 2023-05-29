@@ -36,9 +36,6 @@ class LaunchViewController: UITabBarController {
         
         animateLogo()
         
-//        view.addSubview(startButton)
-//        startButton.frame = CGRect(x: 0, y: self.view.frame.size.height/3, width: view.frame.width, height: 100)
-        
     }
     
     func animateLogo() {
@@ -54,10 +51,4 @@ class LaunchViewController: UITabBarController {
                 },
                 completion: nil)
     }
-    
-    @objc func handleStart(){
-
-        print(123)
-    }
-    
 }

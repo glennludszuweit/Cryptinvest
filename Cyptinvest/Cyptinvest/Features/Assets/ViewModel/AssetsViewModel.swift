@@ -9,6 +9,7 @@ import Foundation
 
 @MainActor
 class AssetsViewModel: ObservableObject {
+    @Published var combinedAssets: [Asset] = []
     @Published var assets = [Asset]()
     @Published var customError: ErrorHandler?
     
@@ -41,7 +42,28 @@ class AssetsViewModel: ObservableObject {
         if searchTerm.isEmpty {
             self.assets = self.assetsList
         } else {
-            self.assets =  self.assetsList.filter { $0.symbol.lowercased().contains(searchTerm.lowercased()) || $0.name.lowercased().contains(searchTerm.lowercased()) }
+            self.combinedAssets =  self.assetsList.filter { $0.symbol.lowercased().contains(searchTerm.lowercased()) || $0.name.lowercased().contains(searchTerm.lowercased()) }
+        }
+    }
+    
+    func addAndReduceUserAssetsWithApiResult(userViewModel: UserViewModel, assetViewModel: AssetDetailsViewModel) {
+        if userViewModel.assets.count == 0 {
+            userViewModel.userAssets.forEach { item in
+                Task {
+                    await assetViewModel.getCoinDetails("\(API.coingeckoGetCoinApi)\(item.id?.lowercased() ?? "bitcoin")\(API.coingeckoGetCoinApiQuery)")
+                    if let assetDetail = assetViewModel.assetDetail {
+                        userViewModel.assets.append(Asset(id: assetDetail.id ?? "", symbol: assetDetail.symbol ?? "", name: assetDetail.name ?? "", image: assetDetail.image?.thumb ?? "", currentPrice: assetDetail.marketData?.currentPrice?["usd"] ?? 0, priceChangePercentage24H: assetDetail.marketData?.priceChangePercentage24h, sparklineIn7D: assetDetail.marketData?.sparkLine7D, currentHoldings: item.amount))
+                    }
+                }
+            }
+        }
+        let items = userViewModel.assets + self.assets
+        self.combinedAssets = items.reduce(into: [Asset]()) { result, element in
+            if let index = result.firstIndex(where: { $0.id == element.id }) {
+                result[index].id += element.id
+            } else {
+                result.append(element)
+            }
         }
     }
 }

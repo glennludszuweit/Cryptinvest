@@ -19,6 +19,26 @@ struct UserAssetsView: View {
         return percentageDifference
     }
     
+    func populateUserAssetsList() {
+        userViewModel.userAssets.forEach { item in
+            Task {
+                await assetViewModel.getCoinDetails("\(API.coingeckoGetCoinApi)\(item.id?.lowercased() ?? "bitcoin")\(API.coingeckoGetCoinApiQuery)")
+                if let assetDetail = assetViewModel.assetDetail {
+                    userViewModel.assets.append(Asset(id: assetDetail.id ?? "", symbol: assetDetail.symbol ?? "", name: assetDetail.name ?? "", image: assetDetail.image?.thumb ?? "", currentPrice: assetDetail.marketData?.currentPrice?["usd"] ?? 0, marketCap: assetDetail.marketData?.marketCap?["usd"], fullyDilutedValuation: assetDetail.marketData?.fullyDilutedValuation?["usd"], totalVolume: assetDetail.marketData?.totalVolume?["usd"], priceChangePercentage24H: assetDetail.marketData?.priceChangePercentage24h, circulatingSupply: assetDetail.marketData?.circulatingSupply, totalSupply: assetDetail.marketData?.totalSupply, maxSupply: assetDetail.marketData?.maxSupply, sparklineIn7D: assetDetail.marketData?.sparkLine7D, currentHoldings: item.amount))
+                }
+            }
+        }
+    }
+    
+    func calculateUsersWorth() {
+        DispatchQueue.main.asyncAfter (deadline: .now() + 1) {
+            userViewModel.assets.forEach { item in
+                assetPrices.append(item.currentPrice * (item.currentHoldings ?? 0))
+            }
+            assetsTotalWorth = assetPrices.reduce(0.0) { $0 + $1 } + (userViewModel.userData.first?.usd ?? 0)
+        }
+    }
+    
     var body: some View {
         VStack {
             VStack {
@@ -26,45 +46,39 @@ struct UserAssetsView: View {
                     .foregroundColor(Color("Purple").opacity(0.75))
                     .font(.custom("", size: 35))
                     .fontWeight(.semibold)
-                    .frame(maxWidth: .infinity, maxHeight: 150)
+                    .frame(maxWidth: .infinity, maxHeight: 100)
             }
-            Divider().frame(height: 1).background(Color("Purple")).shadow(color: Color("Black").opacity(0.2), radius: 10)
-//            List {
             USDCell(amount: userViewModel.userData.first?.usd ?? 0)
-//            }
             List(userViewModel.assets) { asset in
                 AssetsListCell(asset: asset)
             }
             .listStyle(.plain)
-//            .offset(y: -10)
-//            .padding(.top, -10)
             .frame( maxWidth: .infinity)
             .ignoresSafeArea()
-            //        .edgesIgnoringSafeArea(.leading)
-            //        .edgesIgnoringSafeArea(.trailing)
             .scrollContentBackground(.hidden)
         }
         .onAppear {
             if userViewModel.assets.count == 0 {
-                userViewModel.userAssets.forEach { item in
-                    Task {
-                        await assetViewModel.getCoinDetails("\(API.coingeckoGetCoinApi)\(item.id?.lowercased() ?? "bitcoin")\(API.coingeckoGetCoinApiQuery)")
-                        if let assetDetail = assetViewModel.assetDetail {
-                            userViewModel.assets.append(Asset(id: assetDetail.id ?? "", symbol: assetDetail.symbol ?? "", name: assetDetail.name ?? "", image: assetDetail.image?.thumb ?? "", currentPrice: assetDetail.marketData?.currentPrice?["usd"] ?? 0, priceChangePercentage24H: assetDetail.marketData?.priceChangePercentage24h, sparklineIn7D: assetDetail.marketData?.sparkLine7D, currentHoldings: item.amount))
-                        }
-                    }
-                }
-                //percentageDifference((assetDetail.marketData?.currentPrice?["usd"] ?? 0) * item.amount, )
-                //(assetDetail.marketData?.currentPrice?["usd"] ?? 0) * item.amount
-                
-                DispatchQueue.main.asyncAfter (deadline: .now() + 1) {
-                    userViewModel.assets.forEach { item in
-                        assetPrices.append(item.currentPrice * (item.currentHoldings ?? 0))
-                    }
-                    assetsTotalWorth = assetPrices.reduce(0.0) { $0 + $1 } + (userViewModel.userData.first?.usd ?? 0)
-                    print(assetsTotalWorth)
-                    
-                }
+                populateUserAssetsList()
+                calculateUsersWorth()
+            }
+        }
+        .refreshable {
+            if userViewModel.assets.count == 0 {
+                populateUserAssetsList()
+                calculateUsersWorth()
+            }
+        }
+        .navigationTitle("Portfolio")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        Text(String(format:"%.2f %@", percentageDifference(10000, assetsTotalWorth), "%").replacingOccurrences(of: "-", with: ""))
+                        Image(systemName: assetsTotalWorth >= 10000 ? "arrowtriangle.up.fill" : "arrowtriangle.down.fill")
+                            .resizable()
+                            .frame(width: 10, height: 10)
+                    }.foregroundColor(assetsTotalWorth >= 10000 ? Color("Green") : Color("Red"))
+                        .font(.custom("", size: 16))
             }
         }
     }
