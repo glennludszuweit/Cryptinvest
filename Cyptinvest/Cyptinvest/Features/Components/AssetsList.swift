@@ -36,9 +36,3 @@ struct AssetsList: View {
         }
     }
 }
-
-//struct AssetsList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AssetsList(assetsViewModel: AssetsViewModel(manager: NetworkManager()))
-//    }
-//}

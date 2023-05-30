@@ -14,7 +14,6 @@ struct EntryPoint: View {
     var body: some View {
         NavigationStack(path: $coordinator.navigationPath) {
             LaunchView(userViewModel: UserViewModel(manager: CoreDataManager(context: viewContext), context: viewContext)).edgesIgnoringSafeArea(.all).offset(y: 150)
-//            CustomTabBar()
                 .navigationDestination(for: CurrentPage.self) { navigation in
                     switch navigation {
                     case .assetsList:

@@ -69,9 +69,3 @@ struct Transaction: View {
         }
     }
 }
-
-//struct TransactionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TransactionView(userViewModel: UserViewModel(manager: CoreDataManager(context: TransactionView.context)), showTransaction: .constant(false), transactionType: .constant(""), asset: Asset(id: "test", symbol: "test", name: "test", image: "test", currentPrice: 0.0, priceChange24H: 0.0))
-//    }
-//}

@@ -62,9 +62,3 @@ struct UserAssetsView: View {
         }
     }
 }
-
-//struct UserPortfolioView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UserPortfolioView(userViewModel: UserViewModel, assetViewModel: <#AssetDetailsViewModel#>)
-//    }
-//}
