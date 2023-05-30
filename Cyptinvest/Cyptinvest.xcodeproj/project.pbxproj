@@ -277,9 +277,9 @@
 		D4196B0C2A14C61900C4246B /* User */ = {
 			isa = PBXGroup;
 			children = (
-				D4E19FD32A1E38F700CAF40F /* UserModel.swift */,
-				D4196B162A14CA9C00C4246B /* UserViewModel.swift */,
+				D4EECD822A25CB080060CB2F /* Model */,
 				D4196B182A14CAA900C4246B /* View */,
+				D4EECD812A25CAF10060CB2F /* ViewModel */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -320,6 +320,22 @@
 				D4196B0F2A14C9D000C4246B /* AssetsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D4EECD812A25CAF10060CB2F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D4196B162A14CA9C00C4246B /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D4EECD822A25CB080060CB2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4E19FD32A1E38F700CAF40F /* UserModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
