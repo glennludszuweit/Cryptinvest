@@ -24,7 +24,6 @@ Feel free to clone, reuse and improve codebase.
 ## Architecture
 This project is build with MVVM-C and follows the Clean Architecture design.
 It is also build around Protocol Oriented Programming.
-Consumes several techniques of design patterns.
 
 ## Screenshots
 ![Image alt text](./cryptinvest.png)
